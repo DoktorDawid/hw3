@@ -28,14 +28,14 @@
 // console.log(wynik);
 
 
-let ininArr = [1, 6, 23, 8, 4, 98, 3, 7, 3, 98, 4, 98]
-let suma = 0
-let funkcja = function (arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum = sum + arr[i];
-    }
-    return sum;
-};
-suma = funkcja(ininArr);
-console.log(suma);
+// let ininArr = [1, 6, 23, 8, 4, 98, 3, 7, 3, 98, 4, 98]
+// let suma = 0
+// let funkcja = function (arr) {
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         sum = sum + arr[i];
+//     }
+//     return sum;
+// };
+// suma = funkcja(ininArr);
+// console.log(suma);

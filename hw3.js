@@ -51,35 +51,41 @@
 //  A function setOperation() that sets the field from previous sentence and a Calculate function 
 //  that makes calculation and returns its value. 
 
-// let add = function adding(a, b) {
-//     return a + b;
-//    };
-//    let sub = function subing(a, b) {
-//     return a - b;
-//    };
-//    let multi = function multing(a, b) {
-//     return a * b;
-//    };
-//    let div = function diving(a, b) {
-//     return a / b;
-//    };
-//    let calculator = {
-//     x: 2,
-//     y: 3,
-//     operation: null,  
-//     },
-//     calculate: function() {
-//       return this.operation(this.x, this.y);
-//     },
-//     setOperation: function operationTaken(mathOperation) {
-//       this.operation = mathOperation;
-//     }
-//    };
-//    calculator.setOperation(add);
-//    calculator.setParameter(8,9);
-//    console.log(calculator.calculate());
-//    calculator.setOperation(multi);
-//    console.log(calculator.calculate());
+let add = function adding(a, b) {
+    return a + b;
+   };
+   let sub = function subing(a, b) {
+    return a - b;
+   };
+   let multi = function multing(a, b) {
+    return a * b;
+   };
+   let div = function diving(a, b) {
+    return a / b;
+   };
+   let calculator = {
+    x: 2,
+    y: 3,
+    operation: null,  
+    setArguments : function (x,y){
+      this.x = x;
+      this.y = y;
+    },
+    calculate: function() {
+      return this.operation(this.x, this.y);
+    },
+    setOperation: function operationTaken(mathOperation) {
+      this.operation = mathOperation;
+    }
+   };
+   calculator.setArguments(6,7);
+   calculator.setOperation(add);
+   console.log(calculator.calculate());
+
+
+   calculator.setOperation(multi);
+   console.log(calculator.calculate());
+   
 
 
 
@@ -89,53 +95,47 @@
 // 3) Create an array (by hand) of objects and call sum() function in context of each one of them. 
 // Sum function is to come from this object  BaseObject = { X,y, sum: function (){ return this.x+this.y}} 
 
+// let BaseObject = { x: 0, y: 0, sum: function () { return this.x + this.y } };
+// let arr = [
+//   { x: 2, y: 3 },
+//   { x: -1,y: 6 },
+//   { x: 0, y: 8 },
+//   { x: 2, y: 5 }
+// ];
 
-
-// let BaseObject = { x:0 , y : 0, sum: function (){ return this.x+this.y}};
-// let arr = [{x:2,y:3},{x:-1,y:6},{x:0,y:8},{x:2,y:5}];
-// for(i=0; i <arr.length; i++){
-//     let operation = BaseObject.sum.call(arr[i]);
-//     console.log(operation);
+// for (i = 0; i < arr.length; i++) {
+//   let operation = BaseObject.sum.call(arr[i]);
+//   console.log(operation);
 // };
-
-
-
-
-
-
 
 // 4) Given an array of objects, for each object call operation() function in context of next object. 
 // If object is last, got back to start of the array for operation function. In loop;
 
 // let arr = [
-//     {
-//         x: 1,
-//         y: 'object one value',
-//         operation: () => 'object one prafix' + this.x + this.y
-//     },
-//     {
-//         x: 2,
-//         y: 'object two value',
-//         operation: () => 'object two prefix' + this.x + this.y
-//     },
-//     {
-//         x: 3,
-//         y: 'object three value',
-//         operation: () => 'object three prefix' + this.x + this.y
-//     },
+//   {
+//     x: 1,
+//     y: 'object one value',
+//     operation: function () { return 'object one prafix ' + this.x + " " + this.y; }
+//   },
+//   {
+//     x: 2,
+//     y: 'object two value',
+//     operation: function () { return 'object two prefix ' + this.x + " " +  this.y; }
+//   },
+//   {
+//     x: 3,
+//     y: 'object three value',
+//     operation: function () { return 'object three prefix ' + this.x + " " + this.y; }
+//   },
 // ];
 
-// for (i = 0; i < arr.length; i++) {
-//     console.log(arr[i].operation.bind(arr[i + 1]));
-// }
+// for (let i = 0; i < arr.length; i++) {
 
+//   if (i == arr.length - 1) {
+//     console.log(arr[i].operation.bind(arr[0])());
 
-// let obj = {
-//     id: 1,
-//     getId: function () {
-//         return this.id;
-//     }
-// }
-// let contextObject = { id: 2 };
-// let newGetId = obj.getId.bind(contextObject);
-// console.log(newGetId());
+//   } else {
+//   console.log(arr[i].operation.bind(arr[i + 1])());
+//   }
+// };
+
